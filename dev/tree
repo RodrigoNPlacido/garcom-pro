@@ -1,0 +1,27 @@
+Garcom Pro/
+├── assets/
+│   ├── css/
+│   │   └── *.css
+│   ├── font/
+│   │   ├── *.ttf
+│   │   └── *.woff
+│   ├── img/
+│   │   ├── *.jpg
+│   │   ├── *.png
+│   │   └── *.webp
+│   ├── js/
+│   │   └── *.js
+│   └── ts/
+│       └── *.ts    
+├── dev/
+│   ├── documentation.md
+│   ├── todo.md
+│   └── tree
+├── dist/
+│   ├── css/
+│   │   └── *.min.css
+│   └── js/
+│       └── *.min.js
+├── index.html
+├── LICENSE
+└── README.MD
