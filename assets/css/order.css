@@ -3,3 +3,19 @@
 #order {
   transition: margin 500ms ease;
 }
+
+.order__header {
+  display: flex;
+}
+
+.order__header .icon {
+  width: 36px;
+  height: 36px;
+  margin: 0 2px;
+  background: var(--main-icon--bg);
+  color: var(--main-icon--color);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

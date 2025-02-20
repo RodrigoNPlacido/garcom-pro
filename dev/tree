@@ -15,6 +15,7 @@ Garcom Pro/
 │       └── *.ts    
 ├── dev/
 │   ├── documentation.md
+│   ├── log
 │   ├── todo.md
 │   └── tree
 ├── dist/

@@ -1,0 +1,15 @@
+/* Main */
+/* ===================== */
+.bg-theme-primary {
+  background: var(--bg-primary);
+  background-image: var(--bg-primary-image);
+}
+
+.bg-theme-secondary {
+  background: var(--bg-secondary);
+  background-image: var(--bg-secondary-image);
+}
+
+.main-item__header {
+  color: var(--main-color);
+}

@@ -5,6 +5,10 @@
   --bg-secondary: rgb(255, 255, 255);
   --bg-primary-image: url(../img/bg/cartographer-pattern.png);
   --bg-secondary-image: url(../img/bg/mirrored-squares.png);
+
+  --main-color: rgb(0, 0, 0);
+  --main-icon--bg: rgb(0, 0, 0);
+  --main-icon--color: rgb(255, 255, 255);
 }
 
 :root.dark {
@@ -12,21 +16,15 @@
   --bg-secondary: #176400;
   --bg-primary-image: url(../img/bg/gravel.png);
   --bg-secondary-image: url(../img/bg/buried.png);
+
+  --main-color: rgb(255, 255, 255);
+  --main-icon--bg: rgb(255, 255, 255);
+  --main-icon--color: rgb(0, 0, 0);
 }
 
 
 /* Classes */
 /* ===================== */
-.bg-theme-primary {
-  background: var(--bg-primary);
-  background-image: var(--bg-primary-image);
-}
-
-.bg-theme-secondary {
-  background: var(--bg-secondary);
-  background-image: var(--bg-secondary-image);
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
