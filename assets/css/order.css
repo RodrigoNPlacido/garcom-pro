@@ -1,5 +1,5 @@
-/* Main */
+/* Order */
 /* ===================== */
-#main-item__first {
+#order {
   transition: margin 500ms ease;
 }

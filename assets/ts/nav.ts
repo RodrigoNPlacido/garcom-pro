@@ -1,5 +1,6 @@
 // Imports
 import { mainElements } from "./main.js"
+import { orderElements } from "./order.js"
 
 
 // Type
@@ -26,8 +27,8 @@ function mainScroll(element: NavbarItem): void {
     return;
   }
 
-  if (!mainElements.main_item__first) {
-    console.warn("main not exists.");
+  if (!orderElements.order) {
+    console.warn("Order not exists.");
     return;
   }
 
@@ -38,7 +39,7 @@ function mainScroll(element: NavbarItem): void {
     return;
   }
 
-  mainElements.main_item__first.style.marginTop = `${-height * Number(id)}px`;
+  orderElements.order.style.marginTop = `${-height * Number(id)}px`;
 }
 
 

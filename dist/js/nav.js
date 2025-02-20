@@ -1,5 +1,6 @@
 // Imports
 import { mainElements } from "./main.js";
+import { orderElements } from "./order.js";
 // Const
 const navElements = {
     navbarItems: document.querySelectorAll(".navbar-item")
@@ -16,8 +17,8 @@ function mainScroll(element) {
         console.warn("main not exists.");
         return;
     }
-    if (!mainElements.main_item__first) {
-        console.warn("main not exists.");
+    if (!orderElements.order) {
+        console.warn("Order not exists.");
         return;
     }
     const height = (_a = mainElements.main) === null || _a === void 0 ? void 0 : _a.clientHeight;
@@ -25,7 +26,7 @@ function mainScroll(element) {
         console.warn("height dont is a number");
         return;
     }
-    mainElements.main_item__first.style.marginTop = `${-height * Number(id)}px`;
+    orderElements.order.style.marginTop = `${-height * Number(id)}px`;
 }
 // Events
 function navEvents() {
