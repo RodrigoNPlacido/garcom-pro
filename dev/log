@@ -4,3 +4,4 @@ Versions
 1.0.0-dev - Create the main structure
 1.1.0-dev - Create functionality to switch between sections
 1.1.1-dev - [FIX] element id fix and log file creation
+2.0.0-dev - Create the order structure

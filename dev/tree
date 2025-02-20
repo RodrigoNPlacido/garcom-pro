@@ -9,8 +9,6 @@ Garcom Pro/
 │   │   ├── *.jpg
 │   │   ├── *.png
 │   │   └── *.webp
-│   ├── js/
-│   │   └── *.js
 │   └── ts/
 │       └── *.ts    
 ├── dev/

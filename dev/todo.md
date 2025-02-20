@@ -11,9 +11,13 @@
 ## Order Section
 - [x] 2.0.0-dev - Create the order structure
 - [ ] 2.1.0-dev - Create the receipt structure
-- [ ] 2.2.0-dev - Create the receipt receipt taker structure
+- [ ] 2.2.0-dev - Create the receipt taker structure
 - [ ] 2.3.0-dev - Create receipt taker keyboard operation
-- [ ] 2.3.1-dev - Create the functionality of adding different payment methods
+- [ ] 2.4.0-dev - Create the functionality of adding different payment methods
+- [ ] 2.5.0-dev - Create the info receipt structure
+- [ ] 2.6.0-dev - Create the functionality for show info receipt
+- [ ] 2.7.0-dev - Create the functionality of remove receipt
+- [ ] 2.7.0-dev - Create the functionality of edit receipt
 
 ## Statistics Section
 - [ ] 3.0.0-dev - Create the Statistics structure
