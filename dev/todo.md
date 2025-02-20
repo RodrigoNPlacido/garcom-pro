@@ -10,7 +10,7 @@
 
 ## Order Section
 - [x] 2.0.0-dev - Create the order structure
-- [ ] 2.1.0-dev - Create the receipt structure
+- [x] 2.1.0-dev - Create the receipt structure
 - [ ] 2.2.0-dev - Create the receipt taker structure
 - [ ] 2.3.0-dev - Create receipt taker keyboard operation
 - [ ] 2.4.0-dev - Create the functionality of adding different payment methods

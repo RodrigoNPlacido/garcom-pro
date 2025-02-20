@@ -9,6 +9,9 @@
   --main-color: rgb(0, 0, 0);
   --main-icon--bg: rgb(0, 0, 0);
   --main-icon--color: rgb(255, 255, 255);
+
+  --order-receipt--border: black;
+  --order-receipt--border: black;
 }
 
 :root.dark {
@@ -20,6 +23,9 @@
   --main-color: rgb(255, 255, 255);
   --main-icon--bg: rgb(255, 255, 255);
   --main-icon--color: rgb(0, 0, 0);
+
+  --order-receipt--border: white;
+  --order-receipt--color: white;
 }
 
 
