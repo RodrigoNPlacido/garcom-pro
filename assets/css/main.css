@@ -1,0 +1,5 @@
+/* Main */
+/* ===================== */
+#main-item__first {
+  transition: margin 500ms ease;
+}

@@ -1,0 +1,32 @@
+/* Var */
+/* ===================== */
+:root {
+  --bg-primary: rgb(158, 158, 158);
+  --bg-secondary: rgb(255, 255, 255);
+  --bg-primary-image: url(../img/bg/cartographer-pattern.png);
+  --bg-secondary-image: url(../img/bg/mirrored-squares.png);
+}
+
+:root.dark {
+  --bg-primary: rgb(0, 68, 9);
+  --bg-secondary: #176400;
+  --bg-primary-image: url(../img/bg/gravel.png);
+  --bg-secondary-image: url(../img/bg/buried.png);
+}
+
+
+/* Classes */
+/* ===================== */
+.bg-theme-primary {
+  background: var(--bg-primary);
+  background-image: var(--bg-primary-image);
+}
+
+.bg-theme-secondary {
+  background: var(--bg-secondary);
+  background-image: var(--bg-secondary-image);
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

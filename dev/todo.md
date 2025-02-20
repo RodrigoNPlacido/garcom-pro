@@ -1,12 +1,12 @@
 # TODO CHECKLIST
 
 ## Git
-- [ ] 0.1.0-dev - Decide how the project will be done
-- [ ] 0.2.0-dev - Make the appropriate configurations in git
+- [x] 0.1.0-dev - Decide how the project will be done
+- [x] 0.2.0-dev - Make the appropriate configurations in git
 
 ## Structure
-- [ ] 1.0.0-dev - Create the main structure
-- [ ] 1.1.0-dev - Create functionality to switch between sections
+- [x] 1.0.0-dev - Create the main structure
+- [x] 1.1.0-dev - Create functionality to switch between sections
 
 ## Order Section
 - [ ] 2.0.0-dev - Create the order structure
@@ -26,6 +26,9 @@
 - [ ] 4.0.0-dev - Create the Settings structure
 - [ ] 4.1.0-dev - Switch light or dark theme
 - [ ] 4.2.0-dev - Animated Click Feedback
+
+## Details
+- [ ] 5.0.0-dev - Minify all code
 
 ## Finish
 - [ ] 1.0.0v - Launch Project
