@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/order.css">
+    <link rel="stylesheet" href="assets/css/receipt-taker.css">
   </head>
   <body class="d-flex flex-column flex-lg-row position-absolute h-100 w-100 overflow-hidden">
     <!-- Navbar -->
@@ -63,6 +64,149 @@
       <div class="position-relative w-100 h-100 p-2">b</div>
       <div class="position-relative w-100 h-100 p-2">c</div>
     </main>
+
+    <!-- Receipt Taker -->
+    <div class="position-absolute h-100 w-100 bg-theme-secondary d-flex justify-content-center">
+      <div class="receipt-taker p-2">
+        <!-- Exit -->
+        <div class="d-flex justify-content-end">
+          <div class="icon cursor-pointer rounded">
+            <i class="fa-solid fa-x"></i>
+          </div>
+        </div>
+
+        <!-- Selection Payment Type -->
+        <p class="fw-bold m-0 text-main">Forma de Pagamento</p>
+        <div class="dropdown mb-2">
+          <button class="text-main border-main btn dropdown-toggle w-100" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+            Selecione a forma de pagamento
+          </button>
+          <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenu2">
+            <li><button class="dropdown-item" type="button">
+              <p class="fs-5 m-0 py-1"><i class="fa-brands fa-pix text-pix"></i> Pix</p>
+            </button></li>
+            <li><button class="dropdown-item" type="button">
+              <p class="fs-5 m-0 py-1"><i class="fa-solid fa-money-bill text-success"></i> Dinheiro</p>
+            </button></li>
+            <li><button class="dropdown-item" type="button">
+              <p class="fs-5 m-0 py-1"><i class="fa-brands fa-cc-mastercard text-warning"></i> Débito</p>
+            </button></li>
+            <li><button class="dropdown-item" type="button">
+              <p class="fs-5 m-0 py-1"><i class="fa-brands fa-cc-mastercard text-primary"></i> Crédito</p>
+            </button></li>
+            <li><button class="dropdown-item" type="button">
+              <p class="fs-5 m-0 py-1"><i class="fa-solid fa-credit-card text-danger"></i> Mumbuca</p>
+            </button></li>
+            <li><button class="dropdown-item" type="button">
+              <p class="fs-5 m-0 py-1"><i class="fa-solid fa-credit-card text-pink"></i> Voucher</p>
+            </button></li>
+          </ul>
+        </div>
+
+        <!-- Commission -->
+        <div class="mb-2">
+          <input type="checkbox" name="checkbox-commission" id="commission">
+          <label class="fw-bold text-main" for="commission">Remover comissão</label>
+        </div>
+        
+        <!-- Screen -->
+        <div class="py-2 mb-2 bg-dark rounded d-flex justify-content-center align-items-center">
+          <p class="fs-0 fw-bold text-white m-0">$ 10.00</p>
+        </div>
+
+        <!-- Payment Types Show -->
+        <div class="d-flex justify-content-center flex-row flex-wrap m-0 mb-2">
+          <div class="payment-types__item rounded text-center m-1">
+            <p class="fs-6 fw-bold m-0"><i class="fa-brands fa-pix text-pix"></i> 1500.00</p>
+          </div>
+        </div>
+
+        <!-- Keyboard -->
+        <div class="keyboard d-flex justify-content-center mb-2">
+          <div class="keyboard__container row m-0 d-flex justify-content-between">
+            <div class="keyboard__key rounded p-1 col-4 d-flex justify-content-center">
+              <div class="keyboard__key--key d-flex justify-content-center align-items-center">
+                <p class="fs-1 m-0 text-main">1</p>
+              </div>
+            </div>
+            <div class="keyboard__key rounded p-1 col-4 d-flex justify-content-center">
+              <div class="keyboard__key--key d-flex justify-content-center align-items-center">
+                <p class="fs-1 m-0 text-main">2</p>
+              </div>
+            </div>
+            <div class="keyboard__key rounded p-1 col-4 d-flex justify-content-center">
+              <div class="keyboard__key--key d-flex justify-content-center align-items-center">
+                <p class="fs-1 m-0 text-main">3</p>
+              </div>
+            </div>
+            <div class="keyboard__key rounded p-1 col-4 d-flex justify-content-center">
+              <div class="keyboard__key--key d-flex justify-content-center align-items-center">
+                <p class="fs-1 m-0 text-main">4</p>
+              </div>
+            </div>
+            <div class="keyboard__key rounded p-1 col-4 d-flex justify-content-center">
+              <div class="keyboard__key--key d-flex justify-content-center align-items-center">
+                <p class="fs-1 m-0 text-main">5</p>
+              </div>
+            </div>
+            <div class="keyboard__key rounded p-1 col-4 d-flex justify-content-center">
+              <div class="keyboard__key--key d-flex justify-content-center align-items-center">
+                <p class="fs-1 m-0 text-main">6</p>
+              </div>
+            </div>
+            <div class="keyboard__key rounded p-1 col-4 d-flex justify-content-center">
+              <div class="keyboard__key--key d-flex justify-content-center align-items-center">
+                <p class="fs-1 m-0 text-main">7</p>
+              </div>
+            </div>
+            <div class="keyboard__key rounded p-1 col-4 d-flex justify-content-center">
+              <div class="keyboard__key--key d-flex justify-content-center align-items-center">
+                <p class="fs-1 m-0 text-main">8</p>
+              </div>
+            </div>
+            <div class="keyboard__key rounded p-1 col-4 d-flex justify-content-center">
+              <div class="keyboard__key--key d-flex justify-content-center align-items-center">
+                <p class="fs-1 m-0 text-main">9</p>
+              </div>
+            </div>
+            <div class="keyboard__key rounded p-1 col-4 d-flex justify-content-center">
+              <div class="keyboard__key--key d-flex justify-content-center align-items-center">
+                <p class="fs-1 m-0 text-main">00</p>
+              </div>
+            </div>
+            <div class="keyboard__key rounded p-1 col-4 d-flex justify-content-center">
+              <div class="keyboard__key--key d-flex justify-content-center align-items-center">
+                <p class="fs-1 m-0 text-main">0</p>
+              </div>
+            </div>
+            <div class="keyboard__key rounded p-1 col-4 d-flex justify-content-center">
+              <div class="keyboard__key--key d-flex justify-content-center align-items-center">
+                <p class="fs-1 m-0 text-main"><i class="fa-solid fa-delete-left"></i></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="row p-0 m-0">
+          <div class="col-6 d-flex justify-content-center p-0 my-1">
+            <div class="me-1 py-2 w-100 bg-danger rounded d-flex justify-content-center align-items-center cursor-pointer">
+              Remover
+            </div>
+          </div>
+          <div class="col-6 d-flex justify-content-center p-0 my-1">
+            <div class="ms-1 py-2 w-100 bg-warning rounded d-flex justify-content-center align-items-center cursor-pointer">
+              Adicionar
+            </div>
+          </div>
+          <div class="col-12 d-flex justify-content-center p-0 my-1">
+            <div class="px-1 py-2 w-100 bg-success rounded d-flex justify-content-center align-items-center cursor-pointer">
+              Enviar
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
     <!-- Scripts -->
     <script src="dist/js/font-awesome.min.js"></script>

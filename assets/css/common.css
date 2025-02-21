@@ -11,7 +11,7 @@
   --main-icon--color: rgb(255, 255, 255);
 
   --order-receipt--border: black;
-  --order-receipt--border: black;
+  --order-receipt--color: black;
 }
 
 :root.dark {
@@ -29,8 +29,20 @@
 }
 
 
+/* Body */
+/* ===================== */
+body {
+  user-select: none;
+}
+
+
 /* Classes */
 /* ===================== */
+/* Font Size */
+.fs-0 {
+  font-size: calc(2.3rem)!important
+}
+
 .fs-7 {
   font-size: 0.9rem !important;
 }
@@ -39,6 +51,25 @@
   font-size: 0.8rem !important;
 }
 
+/* Border */
+.border-main {
+  border: 1px solid var(--main-color);
+}
+
+/* Font Color */
+.text-main {
+  color: var(--main-color);
+}
+
+.text-pix {
+  color: rgb(55, 190, 176);
+}
+
+.text-pink {
+  color: rgb(255, 134, 154);
+}
+
+/* Cursor Events */
 .cursor-pointer {
   cursor: pointer;
 }

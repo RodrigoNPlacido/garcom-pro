@@ -3,11 +3,13 @@
 .bg-theme-primary {
   background: var(--bg-primary);
   background-image: var(--bg-primary-image);
+  transition: background 400ms;
 }
 
 .bg-theme-secondary {
   background: var(--bg-secondary);
   background-image: var(--bg-secondary-image);
+  transition: background 400ms;
 }
 
 .main-item__header {

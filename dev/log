@@ -5,3 +5,5 @@ Versions
 1.1.0-dev - Create functionality to switch between sections
 1.1.1-dev - [FIX] element id fix and log file creation
 2.0.0-dev - Create the order structure
+2.1.0-dev - Create the receipt structure
+2.1.1-dev - [FIX] dark theme had not been set

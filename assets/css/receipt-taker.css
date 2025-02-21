@@ -1,0 +1,58 @@
+/* Receipt Taker */
+/* ===================== */
+.receipt-taker {
+  width: 100vw;
+  max-width: 80vh;
+  height: 100vh;
+}
+
+.receipt-taker .icon {
+  width: 36px;
+  height: 36px;
+  margin: 0 2px;
+  background: var(--main-icon--bg);
+  color: var(--main-icon--color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* Payment Type */
+.payment-types__item {
+  min-width: 90px;
+  width: fit-content;
+  padding: 2px 5px;
+  border: 1px solid var(--main-color);
+  color: var(--main-color);
+}
+
+/* Keyboard */
+.keyboard {
+  width: 100%;
+}
+
+.keyboard__container {
+  width: 100%;
+  max-width: 335px;
+}
+
+.keyboard__key {
+  max-width: 84px;
+  cursor: pointer;
+}
+
+.keyboard__key:hover {
+  background-color: rgb(0, 0, 0, 0.2);
+}
+
+.keyboard__key:active {
+  background-color: black;
+  color: white;
+}
+
+.keyboard__key--key {
+  width: 100%;
+  max-width: 12.9vh;
+  aspect-ratio: 4/3;
+}
