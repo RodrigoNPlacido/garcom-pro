@@ -7,3 +7,5 @@ Versions
 2.0.0-dev - Create the order structure
 2.1.0-dev - Create the receipt structure
 2.1.1-dev - [FIX] dark theme had not been set
+2.2.0-dev - Create the receipt taker structure
+2.2.1-dev - [FIX] Some colors have been corrected

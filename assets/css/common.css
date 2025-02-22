@@ -38,6 +38,32 @@ body {
 
 /* Classes */
 /* ===================== */
+/* Text Border */
+.tb-black {
+  text-shadow:
+    -1px -1px 0 black,
+     1px -1px 0 black,
+    -1px  1px 0 black,
+     1px  1px 0 black;
+}
+
+/* Background Color */
+.bg-red {
+  background-color: red;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}
+
+.bg-purple {
+  background-color: rgb(171, 16, 197);
+}
+
 /* Font Size */
 .fs-0 {
   font-size: calc(2.3rem)!important
