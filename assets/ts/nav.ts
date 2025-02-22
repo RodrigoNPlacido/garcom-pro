@@ -39,7 +39,7 @@ function mainScroll(element: NavbarItem): void {
     return;
   }
 
-  orderElements.order.style.marginTop = `${-height * Number(id)}px`;
+  (orderElements.order as HTMLElement).style.marginTop = `${-height * Number(id)}px`;
 }
 
 

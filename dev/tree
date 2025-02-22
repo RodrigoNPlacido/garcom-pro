@@ -10,7 +10,7 @@ Garcom Pro/
 │   │   ├── *.png
 │   │   └── *.webp
 │   └── ts/
-│       └── *.ts    
+│       └── *.ts
 ├── dev/
 │   ├── documentation.md
 │   ├── log
