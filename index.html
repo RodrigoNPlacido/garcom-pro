@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/order.css">
     <link rel="stylesheet" href="assets/css/receipt-taker.css">
+    <link rel="stylesheet" href="assets/css/info-receipt.css">
   </head>
   <body class="d-flex flex-column flex-lg-row position-absolute h-100 w-100 overflow-hidden">
     <!-- Navbar -->
@@ -31,10 +32,11 @@
     </nav>
 
     <main class="container-fluid bg-theme-secondary flex-fill p-0 overflow-hidden">
+      <!-- Order Section -->
       <div id="order" class="position-relative container h-100 p-2">
         <div class="main-item__header d-flex align-items-center justify-content-between">
+          <!-- Order Header -->
           <h1 class="m-0"><i class="fa-solid fa-bell-concierge"></i> Comandas</h1>
-          
           <div class="order__header">
             <div class="icon cursor-pointer rounded">
               <i class="fa-solid fa-plus"></i>
@@ -47,7 +49,8 @@
             </div>
           </div>
         </div>
-
+        
+        <!-- receipts -->
         <div class="order__receipts d-flex flex-column flex-md-row row row-cols-2 pt-2 m-0">
           <div class="col-auto col-md-6 col-lg-4 p-0 cursor-pointer">
             <div class="order__receipt rounded py-2 px-2 m-1">
@@ -61,13 +64,17 @@
           </div>
         </div>
       </div>
+
+      <!-- Statistic Section -->
       <div class="position-relative w-100 h-100 p-2">b</div>
+
+      <!-- Settings Section -->
       <div class="position-relative w-100 h-100 p-2">c</div>
     </main>
 
     <!-- Receipt Taker -->
-    <div class="position-absolute h-100 w-100 bg-theme-secondary d-flex justify-content-center">
-      <div class="receipt-taker p-2">
+    <div class="position-absolute h-100 w-100 bg-theme-secondary d-none justify-content-center">
+      <div class="receipt-taker p-2 d-flex flex-column justify-content-around">
         <!-- Exit -->
         <div class="d-flex justify-content-end">
           <div class="icon cursor-pointer rounded">
@@ -76,53 +83,55 @@
         </div>
 
         <!-- Selection Payment Type -->
-        <p class="fw-bold m-0 text-main">Forma de Pagamento</p>
-        <div class="dropdown mb-2">
-          <button class="text-main border-main btn dropdown-toggle w-100" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
-            Selecione a forma de pagamento
-          </button>
-          <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenu2">
-            <li><button class="dropdown-item" type="button">
-              <p class="fs-5 m-0 py-1"><i class="fa-brands fa-pix text-pix"></i> Pix</p>
-            </button></li>
-            <li><button class="dropdown-item" type="button">
-              <p class="fs-5 m-0 py-1"><i class="fa-solid fa-money-bill text-success"></i> Dinheiro</p>
-            </button></li>
-            <li><button class="dropdown-item" type="button">
-              <p class="fs-5 m-0 py-1"><i class="fa-brands fa-cc-mastercard text-warning"></i> Débito</p>
-            </button></li>
-            <li><button class="dropdown-item" type="button">
-              <p class="fs-5 m-0 py-1"><i class="fa-brands fa-cc-mastercard text-primary"></i> Crédito</p>
-            </button></li>
-            <li><button class="dropdown-item" type="button">
-              <p class="fs-5 m-0 py-1"><i class="fa-solid fa-credit-card text-danger"></i> Mumbuca</p>
-            </button></li>
-            <li><button class="dropdown-item" type="button">
-              <p class="fs-5 m-0 py-1"><i class="fa-solid fa-credit-card text-pink"></i> Voucher</p>
-            </button></li>
-          </ul>
+        <div>
+          <p class="fw-bold m-0 text-main">Forma de Pagamento</p>
+          <div class="dropdown">
+            <button class="text-main border-main btn dropdown-toggle w-100" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+              Selecione a forma de pagamento
+            </button>
+            <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenu2">
+              <li><button class="dropdown-item" type="button">
+                <p class="fs-5 m-0 py-1"><i class="fa-brands fa-pix text-pix"></i> Pix</p>
+              </button></li>
+              <li><button class="dropdown-item" type="button">
+                <p class="fs-5 m-0 py-1"><i class="fa-solid fa-money-bill text-success"></i> Dinheiro</p>
+              </button></li>
+              <li><button class="dropdown-item" type="button">
+                <p class="fs-5 m-0 py-1"><i class="fa-brands fa-cc-mastercard text-warning"></i> Débito</p>
+              </button></li>
+              <li><button class="dropdown-item" type="button">
+                <p class="fs-5 m-0 py-1"><i class="fa-brands fa-cc-mastercard text-primary"></i> Crédito</p>
+              </button></li>
+              <li><button class="dropdown-item" type="button">
+                <p class="fs-5 m-0 py-1"><i class="fa-solid fa-credit-card text-danger"></i> Mumbuca</p>
+              </button></li>
+              <li><button class="dropdown-item" type="button">
+                <p class="fs-5 m-0 py-1"><i class="fa-solid fa-credit-card text-pink"></i> Voucher</p>
+              </button></li>
+            </ul>
+          </div>
         </div>
-
+        
         <!-- Commission -->
-        <div class="mb-2">
+        <div class="">
           <input type="checkbox" name="checkbox-commission" id="commission">
           <label class="fw-bold text-main" for="commission">Remover comissão</label>
         </div>
         
         <!-- Screen -->
-        <div class="py-2 mb-2 bg-dark rounded d-flex justify-content-center align-items-center">
+        <div class="py-2 bg-dark rounded d-flex justify-content-center align-items-center">
           <p class="fs-0 fw-bold text-white m-0">$ 10.00</p>
         </div>
 
         <!-- Payment Types Show -->
-        <div class="d-flex justify-content-center flex-row flex-wrap m-0 mb-2">
+        <div class="d-flex justify-content-center flex-row flex-wrap m-0">
           <div class="payment-types__item rounded text-center m-1">
             <p class="fs-6 fw-bold m-0"><i class="fa-brands fa-pix text-pix"></i> 1500.00</p>
           </div>
         </div>
 
         <!-- Keyboard -->
-        <div class="keyboard d-flex justify-content-center mb-2">
+        <div class="keyboard d-flex justify-content-center">
           <div class="keyboard__container row m-0 d-flex justify-content-between">
             <div class="keyboard__key rounded p-1 col-4 d-flex justify-content-center">
               <div class="keyboard__key--key d-flex justify-content-center align-items-center">
@@ -189,17 +198,17 @@
 
         <!-- Buttons -->
         <div class="row p-0 m-0">
-          <div class="col-6 d-flex justify-content-center p-0 my-1">
+          <div class="col-6 d-flex justify-content-center p-0 mb-1">
             <div class="me-1 py-2 w-100 text-light fw-bold bg-red rounded d-flex justify-content-center align-items-center cursor-pointer">
               Remover
             </div>
           </div>
-          <div class="col-6 d-flex justify-content-center p-0 my-1">
+          <div class="col-6 d-flex justify-content-center p-0 mb-1">
             <div class="ms-1 py-2 w-100 text-light fw-bold bg-blue rounded d-flex justify-content-center align-items-center cursor-pointer">
               Adicionar
             </div>
           </div>
-          <div class="col-12 d-flex justify-content-center p-0 my-1">
+          <div class="col-12 d-flex justify-content-center p-0 mt-1">
             <div class="px-1 py-2 w-100 text-light fw-bold bg-purple rounded d-flex justify-content-center align-items-center cursor-pointer">
               Enviar
             </div>
@@ -208,6 +217,145 @@
       </div>
     </div>
     
+    <!-- Info Receipt -->
+    <div class="position-absolute h-100 w-100 bg-theme-secondary d-flex justify-content-center">
+      <div class="info-receipt p-2 d-flex flex-column justify-content-around">
+        <!-- Exit -->
+        <div class="d-flex justify-content-end">
+          <div class="icon cursor-pointer rounded">
+            <i class="fa-solid fa-x"></i>
+          </div>
+        </div>
+
+        <!-- Id -->
+        <div class="d-flex flex-column justify-content-center align-items-start col-6">
+          <div class="w-100 p-1">
+            <p class="m-0 me-1">ID</p>
+            <input class="form-control" type="text" value="#J82oP" disabled>
+          </div>
+        </div>
+
+        <!-- Time & Data -->
+        <div class="d-flex justify-content-between">
+          <div class="d-flex flex-column justify-content-center align-items-start col-6">
+            <div class="w-100 p-1">
+              <p class="m-0 me-1">Data</p>
+              <input class="form-control" type="date" value="2025-02-20" disabled>
+            </div>
+          </div>
+          <div class="d-flex flex-column justify-content-center align-items-start col-6">
+            <div class="w-100 p-1">
+              <p class="m-0 me-1">Horário:</p>
+              <input class="form-control" type="time" value="22:08" disabled>
+            </div>
+          </div>
+        </div>
+
+        <!-- Receipts -->
+        <div class="receipts py-3">
+          <div class="d-flex justify-content-around align-items-center">
+            <div class="col-4 d-flex justify-content-center">
+              <p class="m-0 text-center">Forma de Pagamento</p>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+              <p class="m-0 text-center">Valor Total</p>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+              <p class="m-0 text-center">Retirar Comissão</p>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+            </div>
+          </div>
+          <div class="d-flex justify-content-around align-items-center">
+            <div class="col-4 d-flex justify-content-center">
+              <div class="w-100 p-1">
+                <input class="form-control w-100 text-center" type="text" name="" id="" disabled>
+              </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+              <div class="w-100 p-1">
+                <input class="form-control w-100 text-center" type="number" name="" id="" value="10.00" disabled>
+              </div>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+              <input class="form-check-input" type="checkbox" name="" id="" disabled>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+              <i class="fa-solid fa-x cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="d-flex justify-content-around align-items-center">
+            <div class="col-4 d-flex justify-content-center">
+              <div class="w-100 p-1">
+                <input class="form-control w-100 text-center" type="text" name="" id="" disabled>
+              </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+              <div class="w-100 p-1">
+                <input class="form-control w-100 text-center" type="number" name="" id="" value="10.00" disabled>
+              </div>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+              <input class="form-check-input" type="checkbox" name="" id="" disabled>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+              <i class="fa-solid fa-x cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="d-flex justify-content-around align-items-center">
+            <div class="col-4 d-flex justify-content-center">
+              <div class="w-100 p-1">
+                <input class="form-control w-100 text-center" type="text" name="" id="" disabled>
+              </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+              <div class="w-100 p-1">
+                <input class="form-control w-100 text-center" type="number" name="" id="" value="10.00" disabled>
+              </div>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+              <input class="form-check-input" type="checkbox" name="" id="" disabled>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+              <i class="fa-solid fa-x cursor-pointer"></i>
+            </div>
+          </div>
+          <div class="d-flex justify-content-around align-items-center">
+            <div class="col-4 d-flex justify-content-center">
+              <div class="w-100 p-1">
+                <input class="form-control w-100 text-center" type="text" name="" id="" disabled>
+              </div>
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+              <div class="w-100 p-1">
+                <input class="form-control w-100 text-center" type="number" name="" id="" value="10.00" disabled>
+              </div>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+              <input class="form-check-input" type="checkbox" name="" id="" disabled>
+            </div>
+            <div class="col-2 d-flex justify-content-center">
+              <i class="fa-solid fa-x cursor-pointer"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="row p-0 m-0">
+          <div class="col-6 d-flex justify-content-center p-0 mb-1">
+            <div class="me-1 py-2 w-100 text-light fw-bold bg-red rounded d-flex justify-content-center align-items-center cursor-pointer">
+              Fechar
+            </div>
+          </div>
+          <div class="col-6 d-flex justify-content-center p-0 mb-1">
+            <div class="ms-1 py-2 w-100 text-light fw-bold bg-blue rounded d-flex justify-content-center align-items-center cursor-pointer">
+              Editar
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Scripts -->
     <script src="dist/js/font-awesome.min.js"></script>
     <script type="module" src="dist/js/main.js"></script>

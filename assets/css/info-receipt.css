@@ -1,0 +1,23 @@
+/* Info Receipt */
+/* ===================== */
+.info-receipt {
+  width: 100vw;
+  max-width: 80vh;
+  height: 100vh;
+  color: var(--main-color);
+}
+
+.info-receipt .icon {
+  width: 36px;
+  height: 36px;
+  margin: 0 2px;
+  background: var(--main-icon--bg);
+  color: var(--main-icon--color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.info-receipt .receipts {
+  min-height: 50vh;
+}

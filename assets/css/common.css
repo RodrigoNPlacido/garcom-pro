@@ -47,6 +47,10 @@ body {
      1px  1px 0 black;
 }
 
+.form-check-input {
+  border: 1px solid black;
+}
+
 /* Background Color */
 .bg-red {
   background-color: red;
