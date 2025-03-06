@@ -38,14 +38,17 @@ export const receiptElements = {
   receiptTaker: document.querySelector<HTMLElement>("#receipt-taker"),
   receiptTakerExitButton: document.querySelector<HTMLElement>("#receipt-taker--exit__button"),
   keyboardKey: document.querySelectorAll<HTMLElement>(".keyboard__key"),
-  receiptTakerScreen: document.querySelector<HTMLElement>("#receipt-taker__screen")
+  receiptTakerScreen: document.querySelector<HTMLElement>("#receipt-taker__screen"),
+  receiptTakerCommission: document.querySelector<HTMLInputElement>("#receipt-taker__commission"),
+  receiptTakerPaymentMethodItems: document.querySelectorAll<HTMLElement>(".paymentMethod__item"),
+  receiptTakerPaymentMethod: document.querySelector<HTMLElement>("#receipt-taker__paymentMethod")
 }
-export const receiptVars = {
+export const receiptVars: ReceiptVars = {
   receiptTaker: {
     show: false,
     value: 0,
-    Comment: true,
-    PaymentMethod: null
+    commission: true,
+    paymentMethod: null
   }
 }
 
@@ -122,8 +125,39 @@ async function deleteAllReceipts() {
 }
 
 // Receipt Taker
-function selectionPaymentMethod() {}
-function selectionCommission() {}
+function selectionPaymentMethod(element: Element, method: string = "null") {
+  let methodName;
+
+  if (method !== "null") {
+    methodName = method;
+  } else {
+    methodName = element.getAttribute("data-method");
+    if (!methodName) {console.warn("erro"); return;}
+  }
+
+  if (!receiptElements.receiptTakerPaymentMethod) {console.warn("erro"); return;}
+
+  const methodPaymentStringify = {
+    pix: `<i class="fa-brands fa-pix text-pix"></i> Pix`,
+    money: `<i class="fa-solid fa-money-bill text-success"></i> Dinheiro`,
+    debit: `<i class="fa-brands fa-cc-mastercard text-warning"></i> Débito`,
+    credit: `<i class="fa-brands fa-cc-mastercard text-primary"></i> Crédito`,
+    mumbuca: `<i class="fa-solid fa-credit-card text-danger"></i> Mumbuca`,
+    voucher: `<i class="fa-solid fa-credit-card text-pink"></i> Voucher`,
+    null: "Selecione a forma de pagamento"
+  }
+
+  const methodLabel = methodPaymentStringify.hasOwnProperty(methodName) 
+    ? methodPaymentStringify[methodName as keyof typeof methodPaymentStringify] 
+    : "";
+  receiptElements.receiptTakerPaymentMethod.innerHTML = methodLabel;
+  receiptVars.receiptTaker.paymentMethod = methodName;
+}
+
+function selectionCommission() {
+  receiptVars.receiptTaker.commission = !receiptElements.receiptTakerCommission!.checked;
+  console.log(receiptVars.receiptTaker)
+}
 
 function screenReceiptTakerUpdater() {
   if (!receiptElements.receiptTakerScreen) {console.warn("erro"); return;}
@@ -166,6 +200,12 @@ function receiptEvents() {
   receiptElements.keyboardKey.forEach((keyElement:HTMLElement) => {
     keyElement.addEventListener("click", () => {keyPress(keyElement)});
   });
+  if (!receiptElements.receiptTakerCommission) {console.warn("erro"); return;}
+  receiptElements.receiptTakerCommission.addEventListener("change", selectionCommission)
+  if (!receiptElements.receiptTakerPaymentMethod) {console.warn("erro"); return;}
+  receiptElements.receiptTakerPaymentMethodItems.forEach((paymentMethodItem:HTMLElement) => {
+    paymentMethodItem.addEventListener("click", () => {selectionPaymentMethod(paymentMethodItem)})
+  })
 }
 
 

@@ -87,26 +87,26 @@
         <div>
           <p class="fw-bold m-0 text-main">Forma de Pagamento</p>
           <div class="dropdown">
-            <button class="text-main border-main btn dropdown-toggle w-100" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="text-main border-main btn dropdown-toggle w-100" type="button" id="receipt-taker__paymentMethod" data-bs-toggle="dropdown" aria-expanded="false">
               Selecione a forma de pagamento
             </button>
-            <ul class="dropdown-menu w-100" aria-labelledby="dropdownMenu2">
-              <li><button class="dropdown-item" type="button">
+            <ul class="dropdown-menu w-100" aria-labelledby="receipt-taker__paymentMethod">
+              <li class="paymentMethod__item" data-method="pix"><button class="dropdown-item" type="button">
                 <p class="fs-5 m-0 py-1"><i class="fa-brands fa-pix text-pix"></i> Pix</p>
               </button></li>
-              <li><button class="dropdown-item" type="button">
+              <li class="paymentMethod__item" data-method="money"><button class="dropdown-item" type="button">
                 <p class="fs-5 m-0 py-1"><i class="fa-solid fa-money-bill text-success"></i> Dinheiro</p>
               </button></li>
-              <li><button class="dropdown-item" type="button">
+              <li class="paymentMethod__item" data-method="debit"><button class="dropdown-item" type="button">
                 <p class="fs-5 m-0 py-1"><i class="fa-brands fa-cc-mastercard text-warning"></i> Débito</p>
               </button></li>
-              <li><button class="dropdown-item" type="button">
+              <li  class="paymentMethod__item" data-method="credit"><button class="dropdown-item" type="button">
                 <p class="fs-5 m-0 py-1"><i class="fa-brands fa-cc-mastercard text-primary"></i> Crédito</p>
               </button></li>
-              <li><button class="dropdown-item" type="button">
+              <li  class="paymentMethod__item" data-method="mumbuca"><button class="dropdown-item" type="button">
                 <p class="fs-5 m-0 py-1"><i class="fa-solid fa-credit-card text-danger"></i> Mumbuca</p>
               </button></li>
-              <li><button class="dropdown-item" type="button">
+              <li  class="paymentMethod__item" data-method="voucher"><button class="dropdown-item" type="button">
                 <p class="fs-5 m-0 py-1"><i class="fa-solid fa-credit-card text-pink"></i> Voucher</p>
               </button></li>
             </ul>
@@ -115,13 +115,13 @@
         
         <!-- Commission -->
         <div class="">
-          <input type="checkbox" name="checkbox-commission" id="commission">
-          <label class="fw-bold text-main" for="commission">Remover comissão</label>
+          <input type="checkbox" name="checkbox-commission" id="receipt-taker__commission">
+          <label class="fw-bold text-main" for="receipt-taker__commission">Remover comissão</label>
         </div>
         
         <!-- Screen -->
         <div class="py-2 bg-dark rounded d-flex justify-content-center align-items-center">
-          <p id="receipt-taker__screen" class="fs-0 fw-bold text-white m-0">$ 10.00</p>
+          <p id="receipt-taker__screen" class="fs-0 fw-bold text-white m-0">$ 0.00</p>
         </div>
 
         <!-- Payment Types Show -->

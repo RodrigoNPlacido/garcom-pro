@@ -15,7 +15,7 @@
 - [x] 2.3.0-dev - Create the info receipt structure
 - [x] 2.4.0-dev - Create the functionality of the buttons to show receipt taker, download and delete orders
 - [x] 2.5.0-dev - Create Modal
-- [ ] 2.6.0-dev - Create receipt taker keyboard functionality
+- [x] 2.6.0-dev - Create receipt taker keyboard functionality
 - [ ] 2.7.0-dev - Create functionality to choose payment method and commission
 - [ ] 2.8.0-dev - Create functionality for buttons to add and remove payment types
 - [ ] 2.9.0-dev - Create the functionality to finalize orders in receipt taker
