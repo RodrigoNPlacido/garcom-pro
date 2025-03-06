@@ -45,6 +45,7 @@ function mainScroll(element: NavbarItem): void {
 
 // Events
 function navEvents() {
+  if (!navElements.navbarItems) {console.warn("Erro"); return;}
   navElements.navbarItems.forEach(navbarItem => {
     navbarItem.addEventListener("click", function() {
       mainScroll(navbarItem);

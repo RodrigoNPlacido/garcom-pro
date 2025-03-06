@@ -1,5 +1,11 @@
 /* Receipt Taker */
 /* ===================== */
+#receipt-taker {
+  box-shadow: 5px 5px 15px black;
+  margin-left: 105vw;
+  transition: margin-left 450ms linear, background 400ms;
+}
+
 .receipt-taker {
   width: 100vw;
   max-width: 80vh;
@@ -48,7 +54,10 @@
 
 .keyboard__key:active {
   background-color: black;
-  color: white;
+}
+
+.keyboard__key:active .text-main {
+  color: white !important;
 }
 
 .keyboard__key--key {

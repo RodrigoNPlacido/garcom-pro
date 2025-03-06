@@ -12,7 +12,7 @@
 - [x] 2.0.0-dev - Create the order structure
 - [x] 2.1.0-dev - Create the receipt structure
 - [x] 2.2.0-dev - Create the receipt taker structure
-- [ ] 2.3.0-dev - Create the info receipt structure
+- [x] 2.3.0-dev - Create the info receipt structure
 - [ ] 2.4.0-dev - Create the functionality of the buttons to show receipt taker, download and delete orders
 - [ ] 2.5.0-dev - Create receipt taker keyboard functionality
 - [ ] 2.6.0-dev - Create functionality for buttons to add and remove payment types
