@@ -36,7 +36,9 @@ export const receiptElements = {
   downloadReceiptButton: document.querySelector<HTMLElement>("#download-receipts__button"),
   deleteAllReceiptButton: document.querySelector<HTMLElement>("#delete-all-receipts__button"),
   receiptTaker: document.querySelector<HTMLElement>("#receipt-taker"),
-  receiptTakerExitButton: document.querySelector<HTMLElement>("#receipt-taker--exit__button")
+  receiptTakerExitButton: document.querySelector<HTMLElement>("#receipt-taker--exit__button"),
+  keyboardKey: document.querySelectorAll<HTMLElement>(".keyboard__key"),
+  receiptTakerScreen: document.querySelector<HTMLElement>("#receipt-taker__screen")
 }
 export const receiptVars = {
   receiptTaker: {
@@ -51,8 +53,6 @@ export const receiptVars = {
 /* =====================
 Functions
 ===================== */
-
-
 export function receiptSectionUpdater() {}
 
 function addReceipt() {
@@ -124,7 +124,27 @@ async function deleteAllReceipts() {
 // Receipt Taker
 function selectionPaymentMethod() {}
 function selectionCommission() {}
-function keyPress() {}
+
+function screenReceiptTakerUpdater() {
+  if (!receiptElements.receiptTakerScreen) {console.warn("erro"); return;}
+  receiptElements.receiptTakerScreen.innerHTML = `$ ${String((receiptVars.receiptTaker.value / 100).toFixed(2))}`;
+}
+
+function keyPress(keyElement: Element) {
+  const keyValue = keyElement.getAttribute("data-value");
+  
+  if (keyValue == "00") {
+    receiptVars.receiptTaker.value *= 100;
+  } else if (keyValue == "del") {
+    receiptVars.receiptTaker.value = Math.floor(receiptVars.receiptTaker.value / 10)
+  } else {
+    const value = Number(keyValue);
+    receiptVars.receiptTaker.value = receiptVars.receiptTaker.value * 10 + value;
+  }
+
+  screenReceiptTakerUpdater();
+}
+
 function removeSubReceipt() {}
 function addSubReceipt() {}
 function submitReceipt() {}
@@ -142,6 +162,10 @@ function receiptEvents() {
   receiptElements.downloadReceiptButton!.addEventListener("click", download);
   if (!receiptElements.deleteAllReceiptButton) {console.warn("erro"); return;}
   receiptElements.deleteAllReceiptButton?.addEventListener("click", deleteAllReceipts);
+  if (!receiptElements.keyboardKey) {console.warn("erro"); return;}
+  receiptElements.keyboardKey.forEach((keyElement:HTMLElement) => {
+    keyElement.addEventListener("click", () => {keyPress(keyElement)});
+  });
 }
 
 

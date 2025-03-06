@@ -20,7 +20,9 @@ export const receiptElements = {
     downloadReceiptButton: document.querySelector("#download-receipts__button"),
     deleteAllReceiptButton: document.querySelector("#delete-all-receipts__button"),
     receiptTaker: document.querySelector("#receipt-taker"),
-    receiptTakerExitButton: document.querySelector("#receipt-taker--exit__button")
+    receiptTakerExitButton: document.querySelector("#receipt-taker--exit__button"),
+    keyboardKey: document.querySelectorAll(".keyboard__key"),
+    receiptTakerScreen: document.querySelector("#receipt-taker__screen")
 };
 export const receiptVars = {
     receiptTaker: {
@@ -109,7 +111,27 @@ function deleteAllReceipts() {
 // Receipt Taker
 function selectionPaymentMethod() { }
 function selectionCommission() { }
-function keyPress() { }
+function screenReceiptTakerUpdater() {
+    if (!receiptElements.receiptTakerScreen) {
+        console.warn("erro");
+        return;
+    }
+    receiptElements.receiptTakerScreen.innerHTML = `$ ${String((receiptVars.receiptTaker.value / 100).toFixed(2))}`;
+}
+function keyPress(keyElement) {
+    const keyValue = keyElement.getAttribute("data-value");
+    if (keyValue == "00") {
+        receiptVars.receiptTaker.value *= 100;
+    }
+    else if (keyValue == "del") {
+        receiptVars.receiptTaker.value = Math.floor(receiptVars.receiptTaker.value / 10);
+    }
+    else {
+        const value = Number(keyValue);
+        receiptVars.receiptTaker.value = receiptVars.receiptTaker.value * 10 + value;
+    }
+    screenReceiptTakerUpdater();
+}
 function removeSubReceipt() { }
 function addSubReceipt() { }
 function submitReceipt() { }
@@ -138,6 +160,13 @@ function receiptEvents() {
         return;
     }
     (_a = receiptElements.deleteAllReceiptButton) === null || _a === void 0 ? void 0 : _a.addEventListener("click", deleteAllReceipts);
+    if (!receiptElements.keyboardKey) {
+        console.warn("erro");
+        return;
+    }
+    receiptElements.keyboardKey.forEach((keyElement) => {
+        keyElement.addEventListener("click", () => { keyPress(keyElement); });
+    });
 }
 /* =====================
 Main
