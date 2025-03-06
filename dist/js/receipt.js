@@ -1,38 +1,44 @@
-// Imports
-import { getCookie, base62Decrypt, deleteCookie } from "./common.js";
-// Const
-const receiptElements = {
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+/* =====================
+Imports
+===================== */
+import { getCookie, base62Decrypt, deleteCookie, toggleViewPopup } from "./common.js";
+import { modalElements, modalConfirm, modalSetting } from "./modal.js";
+/* =====================
+Const
+===================== */
+export const receiptElements = {
     addReceiptButton: document.querySelector("#add-receipt__button"),
     downloadReceiptButton: document.querySelector("#download-receipts__button"),
     deleteAllReceiptButton: document.querySelector("#delete-all-receipts__button"),
     receiptTaker: document.querySelector("#receipt-taker"),
     receiptTakerExitButton: document.querySelector("#receipt-taker--exit__button")
 };
-const receiptVars = {
+export const receiptVars = {
     receiptTaker: {
-        show: false
+        show: false,
+        value: 0,
+        Comment: true,
+        PaymentMethod: null
     }
 };
-// Functions
-function toggleViewPopup(section) {
-    switch (section) {
-        case receiptElements.receiptTaker:
-            if (receiptVars.receiptTaker.show) {
-                receiptElements.receiptTaker.style.marginLeft = "105vw";
-                receiptVars.receiptTaker.show = false;
-            }
-            else {
-                receiptElements.receiptTaker.style.marginLeft = "0vw";
-                receiptVars.receiptTaker.show = true;
-            }
-            break;
-        default:
-            console.warn("Erro");
-            return;
-    }
-}
-export function receiptSectionUpdater() { console.log(1); }
+/* =====================
+Functions
+===================== */
+export function receiptSectionUpdater() { }
 function addReceipt() {
+    if (!receiptElements.receiptTaker) {
+        console.warn("erro");
+        return;
+    }
     toggleViewPopup(receiptElements.receiptTaker);
 }
 function download() {
@@ -89,8 +95,27 @@ function download() {
     link.click();
     URL.revokeObjectURL(url);
 }
-function clearAllReceipts() { }
-// Events
+function deleteAllReceipts() {
+    return __awaiter(this, void 0, void 0, function* () {
+        modalSetting("Deseja apagar tdas as comandas?");
+        toggleViewPopup(modalElements.modal);
+        const confirm = yield modalConfirm();
+        toggleViewPopup(modalElements.modal);
+        if (confirm) {
+            deleteCookie();
+        }
+    });
+}
+// Receipt Taker
+function selectionPaymentMethod() { }
+function selectionCommission() { }
+function keyPress() { }
+function removeSubReceipt() { }
+function addSubReceipt() { }
+function submitReceipt() { }
+/* =====================
+Events
+===================== */
 function receiptEvents() {
     var _a;
     if (!receiptElements.addReceiptButton) {
@@ -112,7 +137,9 @@ function receiptEvents() {
         console.warn("erro");
         return;
     }
-    (_a = receiptElements.deleteAllReceiptButton) === null || _a === void 0 ? void 0 : _a.addEventListener("click", deleteCookie);
+    (_a = receiptElements.deleteAllReceiptButton) === null || _a === void 0 ? void 0 : _a.addEventListener("click", deleteAllReceipts);
 }
-// Main
+/* =====================
+Main
+===================== */
 receiptEvents();

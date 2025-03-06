@@ -1,19 +1,27 @@
-// Imports
+/* =====================
+Imports
+===================== */
 import { mainElements } from "./main.js"
 import { orderElements } from "./order.js"
 
 
-// Type
+/* =====================
+Type
+===================== */
 type NavbarItem = Element & { getAttribute(attribute: string): string | null };
 
 
-// Const
+/* =====================
+Const
+===================== */
 const navElements = {
   navbarItems: document.querySelectorAll<HTMLElement>(".navbar-item")
 };
 
 
-// Functions
+/* =====================
+Functions
+===================== */
 function mainScroll(element: NavbarItem): void {
   const id = element.getAttribute("data-id");
 
@@ -43,7 +51,9 @@ function mainScroll(element: NavbarItem): void {
 }
 
 
-// Events
+/* =====================
+Events
+===================== */
 function navEvents() {
   if (!navElements.navbarItems) {console.warn("Erro"); return;}
   navElements.navbarItems.forEach(navbarItem => {
@@ -54,5 +64,7 @@ function navEvents() {
 }
 
 
-// Main
+/* =====================
+Main
+===================== */
 navEvents();

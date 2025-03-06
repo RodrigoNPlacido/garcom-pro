@@ -13,12 +13,13 @@
 - [x] 2.1.0-dev - Create the receipt structure
 - [x] 2.2.0-dev - Create the receipt taker structure
 - [x] 2.3.0-dev - Create the info receipt structure
-- [ ] 2.4.0-dev - Create the functionality of the buttons to show receipt taker, download and delete orders
-- [ ] 2.5.0-dev - Create receipt taker keyboard functionality
-- [ ] 2.6.0-dev - Create functionality for buttons to add and remove payment types
-- [ ] 2.7.0-dev - Create the functionality to finalize orders in receipt taker
-- [ ] 2.8.0-dev - Create the functionality to open and close the info receipt
-- [ ] 2.9.0-dev - Create the functionality to edit and remove an order via the info receipt
+- [x] 2.4.0-dev - Create the functionality of the buttons to show receipt taker, download and delete orders
+- [ ] 2.5.0-dev - Create Modal
+- [ ] 2.6.0-dev - Create receipt taker keyboard functionality
+- [ ] 2.7.0-dev - Create functionality for buttons to add and remove payment types
+- [ ] 2.8.0-dev - Create the functionality to finalize orders in receipt taker
+- [ ] 2.9.0-dev - Create the functionality to open and close the info receipt
+- [ ] 2.10.0-dev - Create the functionality to edit and remove an order via the info receipt
 
 ## Statistics Section
 - [ ] 3.0.0-dev - Create the Statistics structure

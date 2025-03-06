@@ -13,6 +13,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="assets/css/common.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/modal.css">
     <link rel="stylesheet" href="assets/css/order.css">
     <link rel="stylesheet" href="assets/css/receipt-taker.css">
     <link rel="stylesheet" href="assets/css/info-receipt.css">
@@ -281,7 +282,7 @@
               <input class="form-check-input" type="checkbox" name="" id="" disabled>
             </div>
             <div class="col-2 d-flex justify-content-center">
-              <i class="fa-solid fa-x cursor-pointer</i>
+              <i class="fa-solid fa-x cursor-pointer"></i>
             </div>
           </div>
           <div class="d-flex justify-content-around align-items-center">
@@ -356,6 +357,33 @@
       </div>
     </div>
 
+    <!-- Modal -->
+    <div class="my-modal d-none">
+      <div class="my-modal__container d-flex flex-column justify-content-between">
+        <div class="my-modal__header w-100 d-flex justify-content-end p-3">
+          <i class="fa-solid fa-x cursor-pointer"></i>
+        </div>
+        <div class="my-modal__content w-100 fs-5 text-center px-3 py-3">
+          Tem certeza que quer fazer essa merda?
+        </div>
+        <div class="my-modal__footer w-100 p-3 d-flex justify-content-center">
+          <button type="button" class="btn btn-danger mx-2 my-modal__button-decline">Recusar</button>
+          <button type="button" class="btn btn-primary mx-2 my-modal__button-confirm">Confirmar</button>
+        </div>
+      </div>
+    </div>    
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Scripts -->
     <script src="dist/js/font-awesome.min.js"></script>
     <script type="module" src="dist/js/common.js"></script>
@@ -363,5 +391,6 @@
     <script type="module" src="dist/js/order.js"></script>
     <script type="module" src="dist/js/nav.js"></script>
     <script type="module" src="dist/js/receipt.js"></script>
+    <script type="module" src="dist/js/modal.js"></script>
   </body>
 </html>

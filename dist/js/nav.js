@@ -1,11 +1,17 @@
-// Imports
+/* =====================
+Imports
+===================== */
 import { mainElements } from "./main.js";
 import { orderElements } from "./order.js";
-// Const
+/* =====================
+Const
+===================== */
 const navElements = {
     navbarItems: document.querySelectorAll(".navbar-item")
 };
-// Functions
+/* =====================
+Functions
+===================== */
 function mainScroll(element) {
     var _a;
     const id = element.getAttribute("data-id");
@@ -28,7 +34,9 @@ function mainScroll(element) {
     }
     orderElements.order.style.marginTop = `${-height * Number(id)}px`;
 }
-// Events
+/* =====================
+Events
+===================== */
 function navEvents() {
     if (!navElements.navbarItems) {
         console.warn("Erro");
@@ -40,5 +48,7 @@ function navEvents() {
         });
     });
 }
-// Main
+/* =====================
+Main
+===================== */
 navEvents();

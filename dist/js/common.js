@@ -1,8 +1,15 @@
-// Imports
-import { receiptSectionUpdater } from "./receipt.js";
-// Const
+/* =====================
+Imports
+===================== */
+import { receiptSectionUpdater, receiptElements, receiptVars } from "./receipt.js";
+import { modalElements, modalVars } from "./modal.js";
+/* =====================
+Const
+===================== */
 const DICT = "0123456789abcdefghijklmnopqsrtuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// Functions
+/* =====================
+Functions
+===================== */
 export function getCookie(id = null) {
     const cookies = document.cookie.split("; ");
     for (const cookie of cookies) {
@@ -59,4 +66,33 @@ export function base62Decrypt(value) {
         result += indexChar * Math.pow(62, index);
     }
     return result;
+}
+export function toggleViewPopup(section) {
+    switch (section) {
+        case receiptElements.receiptTaker:
+            if (receiptVars.receiptTaker.show) {
+                receiptElements.receiptTaker.style.marginLeft = "105vw";
+                receiptVars.receiptTaker.show = false;
+            }
+            else {
+                receiptElements.receiptTaker.style.marginLeft = "0vw";
+                receiptVars.receiptTaker.show = true;
+            }
+            break;
+        case modalElements.modal:
+            if (modalVars.show) {
+                modalElements.modal.classList.remove("d-flex");
+                modalElements.modal.classList.add("d-none");
+                modalVars.show = false;
+            }
+            else {
+                modalElements.modal.classList.remove("d-none");
+                modalElements.modal.classList.add("d-flex");
+                modalVars.show = true;
+            }
+            break;
+        default:
+            console.warn("Erro");
+            return;
+    }
 }
