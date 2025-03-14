@@ -4,16 +4,20 @@ Imports
 import { receiptSectionUpdater, receiptElements, receiptVars } from "./receipt.js"
 import { modalElements, modalVars } from "./modal.js"
 
+
 /* ===================== 
 Const 
 ===================== */
-const DICT: string = "0123456789abcdefghijklmnopqsrtuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 
 /* ===================== 
 Functions
 ===================== */
 export function getCookie(id: string | null = null) {
+  if (!document.cookie) {
+    return null;
+  }
+
   const cookies = document.cookie.split("; ");
 
   for (const cookie of cookies) {
@@ -35,8 +39,32 @@ export function getCookie(id: string | null = null) {
   return null;
 }
 
-function addCookie() {}
-function updateCookie() {}
+export function updateCookie(values: number[], commissions: number[], paymentMethods: number[], time: number) {
+  let dataCookie = getCookie();
+  let cookie;
+
+  if (dataCookie == null) {
+    cookie = "";
+  } else {
+    cookie = dataCookie.join("#") + "#";
+  }
+
+  let rewriteCookie = "";
+
+  for (let index=0; index<values.length; index++) {
+    const encodedValues = [
+      base62Encrypt(Math.round(values[index]), "price"),
+      base62Encrypt(commissions[index]),
+      base62Encrypt(paymentMethods[index]),
+    ].join('');
+    rewriteCookie += encodedValues;
+  }
+
+  rewriteCookie += base62Encrypt(time, "time");
+  const date = new Date(); 
+  const expirationDate = new Date(date.getTime() + 7 * 24 * 60 * 60 * 1000);
+  document.cookie = `data=${cookie + rewriteCookie + "#"}; expires=${expirationDate.toUTCString()}; path=/`;
+}
 
 export function deleteCookie() {
   document.cookie = "data=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
@@ -44,6 +72,7 @@ export function deleteCookie() {
 }
 
 export function base62Encrypt(value: number, type: string | null = null) {
+  const DICT: string = "0123456789abcdefghijklmnopqsrtuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let encryptValue = "";
 
   if (value === 0) {
@@ -52,7 +81,7 @@ export function base62Encrypt(value: number, type: string | null = null) {
     while (value !== 0) {
       encryptValue += DICT[value % 62];
       value = Math.floor(value / 62);
-      }
+    }
   }
 
   const lengthMap: Record<string, number> = {
@@ -66,6 +95,8 @@ export function base62Encrypt(value: number, type: string | null = null) {
 }
 
 export function base62Decrypt(value: string) {
+  const DICT: string = "0123456789abcdefghijklmnopqsrtuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
   let result = 0;
   const reversedValue = value.split('').reverse().join('');
 
