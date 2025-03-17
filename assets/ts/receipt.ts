@@ -19,7 +19,8 @@ type Subcontent = {
   time: number;
 };
 type ReceiptVars = {
-  receiptTaker: ReceiptTaker
+  receiptTaker: ReceiptTaker,
+  infoReceipt: InfoReceipt
 }
 type ReceiptTaker = {
   show: boolean,
@@ -27,6 +28,9 @@ type ReceiptTaker = {
   commission: boolean[],
   paymentMethod: (string | null)[],
   size: number
+}
+type InfoReceipt = {
+  show: boolean
 }
 
 
@@ -48,7 +52,9 @@ export const receiptElements = {
   receiptTakerAddButton: document.querySelector<HTMLElement>("#receipt-taker__add-button"),
   receiptTakerRemoveButton: document.querySelector<HTMLElement>("#receipt-taker__remove-button"),
   receiptTakerSubmitButton: document.querySelector<HTMLElement>("#receipt-taker__submit-button"),
-  receiptTakerMethodPaymentSection: document.querySelector<HTMLElement>("#receipt-taker__payment-method--section")
+  receiptTakerMethodPaymentSection: document.querySelector<HTMLElement>("#receipt-taker__payment-method--section"),
+  infoReceipt: document.querySelector<HTMLElement>("#info-receipt__container"),
+  infoReceiptExitButton: document.querySelector<HTMLElement>("#info-receipt--exit__button")
 }
 export const receiptVars: ReceiptVars = {
   receiptTaker: {
@@ -57,6 +63,9 @@ export const receiptVars: ReceiptVars = {
     commission: [true],
     paymentMethod: [null],
     size: 1
+  },
+  infoReceipt: {
+    show: false
   }
 }
 
@@ -68,14 +77,14 @@ function orderReceiptEvent(element: Element) {
   const id = element.id;
   const cookie = getCookie(id);
 
-  
+  if (!receiptElements.infoReceipt) {console.warn("erro"); return;}
+  toggleViewPopup(receiptElements.infoReceipt)
 }
 
 export function receiptSectionUpdater() {
   const cookie = getCookie();
 
   if (cookie == null) {
-    // Você ainda não tem comandas...
     receiptElements.orderReceipts!.innerHTML = "Sem Comandas Registradas. Clique em [+] e comece agora mesmo";
     return;
   }
@@ -404,6 +413,8 @@ async function submitReceipt() {
   clearReceiptTaker(450);
 }
 
+// Info Receipt
+
 
 /* =====================
 Events
@@ -433,6 +444,8 @@ function receiptEvents() {
   receiptElements.receiptTakerRemoveButton.addEventListener("click", removeSubReceipt);
   if (!receiptElements.receiptTakerSubmitButton) {console.warn("erro"); return;}
   receiptElements.receiptTakerSubmitButton.addEventListener("click", submitReceipt);
+  if (!receiptElements.infoReceiptExitButton) {console.log("erro"); return;}
+  receiptElements.infoReceiptExitButton.addEventListener("click", () => {toggleViewPopup(receiptElements.infoReceipt!)});
 }
 
 

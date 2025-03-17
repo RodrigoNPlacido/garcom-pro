@@ -30,7 +30,9 @@ export const receiptElements = {
     receiptTakerAddButton: document.querySelector("#receipt-taker__add-button"),
     receiptTakerRemoveButton: document.querySelector("#receipt-taker__remove-button"),
     receiptTakerSubmitButton: document.querySelector("#receipt-taker__submit-button"),
-    receiptTakerMethodPaymentSection: document.querySelector("#receipt-taker__payment-method--section")
+    receiptTakerMethodPaymentSection: document.querySelector("#receipt-taker__payment-method--section"),
+    infoReceipt: document.querySelector("#info-receipt__container"),
+    infoReceiptExitButton: document.querySelector("#info-receipt--exit__button")
 };
 export const receiptVars = {
     receiptTaker: {
@@ -39,6 +41,9 @@ export const receiptVars = {
         commission: [true],
         paymentMethod: [null],
         size: 1
+    },
+    infoReceipt: {
+        show: false
     }
 };
 /* =====================
@@ -47,11 +52,15 @@ Functions
 function orderReceiptEvent(element) {
     const id = element.id;
     const cookie = getCookie(id);
+    if (!receiptElements.infoReceipt) {
+        console.warn("erro");
+        return;
+    }
+    toggleViewPopup(receiptElements.infoReceipt);
 }
 export function receiptSectionUpdater() {
     const cookie = getCookie();
     if (cookie == null) {
-        // Você ainda não tem comandas...
         receiptElements.orderReceipts.innerHTML = "Sem Comandas Registradas. Clique em [+] e comece agora mesmo";
         return;
     }
@@ -390,6 +399,7 @@ function submitReceipt() {
         clearReceiptTaker(450);
     });
 }
+// Info Receipt
 /* =====================
 Events
 ===================== */
@@ -449,6 +459,11 @@ function receiptEvents() {
         return;
     }
     receiptElements.receiptTakerSubmitButton.addEventListener("click", submitReceipt);
+    if (!receiptElements.infoReceiptExitButton) {
+        console.log("erro");
+        return;
+    }
+    receiptElements.infoReceiptExitButton.addEventListener("click", () => { toggleViewPopup(receiptElements.infoReceipt); });
 }
 /* =====================
 Main

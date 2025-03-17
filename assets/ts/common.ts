@@ -134,6 +134,15 @@ export function toggleViewPopup(section: Element) {
         modalVars.show = true;
       }
       break;
+    case receiptElements.infoReceipt:
+      if (receiptVars.infoReceipt.show) {
+        receiptElements.infoReceipt!.style.marginLeft = "105vw";
+        receiptVars.infoReceipt.show = false;
+      } else {
+        receiptElements.infoReceipt!.style.marginLeft = "0vw";
+        receiptVars.infoReceipt.show = true;
+      }
+      break;
     default:
       console.warn("Erro");
       return;
